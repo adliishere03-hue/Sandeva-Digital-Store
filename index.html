@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandeva Digital Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0a0a0f, #0d1b2a);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 50px;
+      background: url('https://files.catbox.moe/idw34t.png') no-repeat center/120px;
+      background-position-y: 30px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-top: 150px;
+      font-weight: 700;
+      color: #00b4d8;
+      text-shadow: 0 0 20px rgba(0,180,216,0.6);
+    }
+    header p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      color: #bde0fe;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      margin: 30px 0;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 180, 216, 0.2);
+      transform: translateX(100px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+    .card.left {
+      transform: translateX(-100px);
+    }
+    .card.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    .card h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #90e0ef;
+    }
+    .card p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #caf0f8;
+    }
+    .contact {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .contact a {
+      display: inline-block;
+      background: #00b4d8;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(0,180,216,0.4);
+    }
+    .contact a:hover {
+      background: #0096c7;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0,180,216,0.7);
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #90e0ef;
+      font-size: 0.9rem;
+      background: rgba(0, 0, 0, 0.3);
+      margin-top: 60px;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .card h2 {
+        font-size: 1.7rem;
+      }
+      .card p {
+        font-size: 1rem;
+      }
+      .contact a {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sandeva Digital Store</h1>
+    <p>Menjual Nomor Virtual Berbagai Negara & Jasa Lainnya</p>
+  </header>
+
+  <section>
+    <div class="card left">
+      <h2>🌍 Tentang Kami</h2>
+      <p>
+        Sandeva Digital Store adalah penyedia layanan digital terpercaya yang berfokus pada penjualan nomor virtual dari berbagai negara untuk kebutuhan WhatsApp, Telegram, dan platform lainnya. Kami hadir dengan pelayanan cepat, harga terjangkau, dan kualitas nomor terbaik.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>📦 Layanan Kami</h2>
+      <p>
+        ✅ Nomor Virtual WhatsApp<br>
+        ✅ Nomor Virtual Telegram<br>
+        ✅ Nomor untuk Verifikasi Akun<br>
+        ✅ Jasa Digital & Tools Otomatisasi<br><br>
+        Kami terus berinovasi untuk memberikan layanan digital berkualitas tinggi yang dapat diandalkan untuk semua kebutuhan Anda.
+      </p>
+    </div>
+
+    <div class="card left">
+      <h2>🤝 Kenapa Memilih Kami</h2>
+      <p>
+        💠 Harga bersaing & transparan<br>
+        💠 Proses cepat dan mudah<br>
+        💠 Dukungan pelanggan ramah<br>
+        💠 Layanan 24/7 tanpa batas waktu
+      </p>
+    </div>
+
+    <div class="contact">
+      <a href="https://wa.me/6281342074706" target="_blank">
+        💬 Hubungi Kami di WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Sandeva Digital Store — All Rights Reserved.
+  </footer>
+
+  <script>
+    // Animasi scroll kanan kiri
+    const cards = document.querySelectorAll('.card');
+    const revealOnScroll = () => {
+      const trigger = window.innerHeight * 0.85;
+      cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top < trigger) {
+          card.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
